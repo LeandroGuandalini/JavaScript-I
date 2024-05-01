@@ -17,7 +17,7 @@ salarioLiquido = 0
 hoje = new Date()
 anoAtual = hoje.getFullYear()
 idade = anoAtual - anoNascimento
-salarioLiquido = salarioBase + gratificacao + bonus - desconto + adicional
+salarioLiquido = salarioBase + gratificacao + bonus - desconto
 
 // if
 
