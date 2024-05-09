@@ -1,3 +1,6 @@
+let divHistorico = document.getElementById("div-historico")
+divHistorico.style.display = "none";
+
 function calcularIdade(oAnoNascimento){
   const hoje = new Date()
   const anoAtual = hoje.getFullYear()
@@ -13,18 +16,38 @@ function calcularValorAdicional(aIdade){
   return adicional 
 }
 
-function impressao(){
+function calcularSalarioLiquido(aIdade, oSalarioBase, aGratificacao, oBonus, oDesconto, oValorTipo, oValorSenioridade){
+  let adicional = calcularValorAdicional(aIdade)
+
+  let salarioLiquido = (oSalarioBase + aGratificacao + oBonus + adicional + oValorTipo) * oValorSenioridade - oDesconto
+
+  return salarioLiquido;
+}
+
+function imprimir() {
   const nome = document.getElementById("nome").value
-  const anoNascimento = parseInt(document.getElementById("anoNascimento").value)
-  const salarioBase = parseFloat(document.getElementById("salarioBase").value)
-  const gratificacao = parseFloat(document.getElementById("gratificacao").value)
-  const bonus = parseFloat(document.getElementById("bonus").value)
-  const desconto = parseFloat(document.getElementById("desconto").value)
+  const anoNascimento = Number(document.getElementById("anoNascimento").value)
+  const salarioBase = Number(document.getElementById("salarioBase").value)
+  const gratificacao = Number(document.getElementById("gratificacao").value)
+  const bonus = Number(document.getElementById("bonus").value)
+  const desconto = Number(document.getElementById("desconto").value)
+  const valorTipo = Number(document.getElementById("tipo").value)
+  const valorSenioridade = Number(document.getElementById("senioridade").value)
 
   const idade = calcularIdade(anoNascimento)
-  let adicional = calcularValorAdicional(idade)
-  let salarioLiquido = salarioBase + gratificacao + bonus - desconto + adicional
+
+  let salarioLiquido = calcularSalarioLiquido(idade, salarioBase, gratificacao, bonus, desconto, valorTipo, valorSenioridade)
 
   let mensagem = `Eu sou o ${nome}, tenho ${idade} anos e ganho R$${salarioLiquido}`
-alert(mensagem)
+
+  criarItemHistorico(mensagem)
+
+  divHistorico.style.display = "block";
+}
+
+function criarItemHistorico(aMensagem) {
+  let historico = document.getElementById("ul-historico")
+  let listItem = document.createElement("li")
+  listItem.textContent = aMensagem
+  historico.appendChild(listItem)
 }
