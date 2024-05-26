@@ -38,7 +38,7 @@
           <select class="form-select" id="senioridade">
             <option disabled>Escolha a senioridade de funcionário</option>
             <option selected value="1">Júnior</option>
-            <option value="1.3">Pleno<option>
+            <option value="1.3">Pleno</option>
             <option value="1.4">Sênior</option>
           </select>
         </div>
@@ -48,6 +48,11 @@
       <div class="mb-3">
         <label>Ano de nascimento:</label>
         <input type="text" class="form-control" id="anoNascimento">
+      </div>
+
+      <div class="mb-3">
+        <label>E-mail:</label>
+        <input type="email" class="form-control" id="email">
       </div>
 
       <div class="mb-3">
@@ -67,6 +72,89 @@
             <input type="text" class="form-control" placeholder="Entre com o desconto" id="desconto">
           </div>
         </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col">
+          <label>Signo:</label>
+          <select class="form-select" id="signo">
+            <option selected>Escolha seu signo</option>
+            <option value="10">Áries</option>
+            <option value="20">Touro</option>
+            <option value="30">Gêmeos</option>
+            <option value="40">Câncer</option>
+            <option value="50">Leão</option>
+            <option value="60">Virgem</option>
+            <option value="70">Libra</option>
+            <option value="80">Escorpião</option>
+            <option value="90">Sagitário</option>
+            <option value="100">Capricórnio</option>
+            <option value="110">Aquário</option>
+            <option value="120">Peixes</option>
+          </select>
+        </div>
+
+        <div class="col">
+          <label>Time de Futebol:</label>
+          <select class="form-select" id="futebol">
+            <option selected>Escolha seu time de futebol</option>
+            <option value="0">Flamengo</option>
+            <option value="1000">Palmeiras</option>
+            <option value="30">Atlético-MG</option>
+            <option value="40">Grêmio</option>
+            <option value="10">Athletico-PR</option>
+            <option value="50">Santos</option>
+            <option value="40">São Paulo</option>
+            <option value="20">Internacional</option>
+            <option value="10">Fluminense</option>
+            <option value="0">Corinthians</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label>Soft Skills</label><br>
+          <input type="checkbox" id="pensamento-analitico" value="">
+          <label for="pensamento-analitico">Pensamento Analítico</label><br>
+          <input type="checkbox" id="pensamento-criativo" value="">
+          <label for="pensamento-criativo">Pensamento Criativo</label><br>
+          <input type="checkbox" id="resiliencia" value="">
+          <label for="resiliencia">Resiliência</label><br>
+          <input type="checkbox" id="flexibilidade" value="">
+          <label for="flexibilidade">Flexibilidade</label><br>
+          <input type="checkbox" id="agilidade" value="">
+          <label for="agilidade">Agilidade</label><br>
+          <input type="checkbox" id="motivacao-autoconhecimento" value="">
+          <label for="motivacao-autoconhecimento">Motivação e Autoconhecimento</label><br>
+          <input type="checkbox" id="curiosidade-aprendizagem" value="">
+          <label for="curiosidade-aprendizagem">Curiosidade e Aprendizagem Contínua</label><br>
+          <input type="checkbox" id="repertorio" value="">
+          <label for="repertorio">Repertório Tecnológico</label><br>
+          <input type="checkbox" id="confiabilidade" value="">
+          <label for="confiabilidade">Confiabilidade e Atenção aos Detalhes</label><br>
+          <input type="checkbox" id="empatia" value="">
+          <label for="empatia">Empatia e Escuta Ativa</label><br>
+          <input type="checkbox" id="lideranca" value="">
+          <label for="lideranca">Liderança e Influência Social</label><br>
+          <input type="checkbox" id="controle" value="">
+          <label for="controle">Controle de Qualidade</label><br>
+        </div>
+
+        <div class="col">
+          <label>Escolaridade</label><br>
+          <input type="radio" id="opcao1" name="opcao" value="">
+          <label for="opcao1">Ensino Fundamental</label><br>
+          <input type="radio" id="opcao2" name="opcao" value="">
+          <label for="opcao2">Ensino Médio</label><br>
+          <input type="radio" id="opcao3" name="opcao" value="">
+          <label for="opcao3">Ensino Superior</label><br>
+          <input type="radio" id="opcao4" name="opcao" value="">
+          <label for="opcao4">Pós-Graduação</label><br>
+        </div>
+        
       </div>
 
       <button type="button" class="btn btn-primary" onclick="imprimir()">Calcular</button>
