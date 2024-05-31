@@ -6,6 +6,129 @@
   <title>Imobiliária Delta</title>
 </head>
 <body>
+  <header>
+    <h1>Imobiliário Delta</h1>
+  </header>
   
+  <div class="campos">
+    <div class="logradouro">
+      <label>Logradouro:</label>
+      <select id="logradouro">
+        <option value="Aeroporto">Aeroporto</option>
+        <option value="Alameda">Alameda</option>
+        <option value="Área">Área</option>
+        <option value="Avenida">Avenida</option>
+        <option value="Campo">Campo</option>
+        <option value="Chácara">Chácara</option>
+        <option value="Colônia">Colônia</option>
+        <option value="Condomínio">Condomínio</option>
+        <option value="Conjunto">Conjunto</option>
+        <option value="Distrito">Distrito</option>
+        <option value="Esplanada">Esplanada</option>
+        <option value="Estação">Estação</option>
+        <option value="Estrada">Estrada</option>
+        <option value="Favela">Favela</option>
+        <option value="Fazenda">Fazenda</option>
+        <option value="Feira">Feira</option>
+        <option value="Jardim">Jardim</option>
+        <option value="Ladeira">Ladeira</option>
+        <option value="Lago">Lago</option>
+        <option value="Lagoa">Lagoa</option>
+        <option value="Largo">Largo</option>
+        <option value="Loteamento">Loteamento</option>
+        <option value="Morro">Morro</option>
+        <option value="Núcleo">Núcleo</option>
+        <option value="Parque">Parque</option>
+        <option value="Passarela">Passarela</option>
+        <option value="Pátio">Pátio</option>
+        <option value="Praça">Praça</option>
+        <option value="Quadra">Quadra</option>
+        <option value="Recanto">Recanto</option>
+        <option value="Residencial">Residencial</option>
+        <option value="Rodovia">Rodovia</option>
+        <option value="Rua">Rua</option>
+        <option value="Setor">Setor</option>
+        <option value="Sítio">Sítio</option>
+        <option value="Travessa">Travessa</option>
+        <option value="Trecho">Trecho</option>
+        <option value="Trevo">Trevo</option>
+        <option value="Vale">Vale</option>
+        <option value="Vereda">Vereda</option>
+        <option value="Via">Via</option>
+        <option value="Viaduto">Viaduto</option>
+        <option value="Viela">Viela</option>
+        <option value="Vila">Vila</option>
+      </select>
+    </div>
+
+    <div class="divEndereco">
+      <label>Insira o endereço do imóvel:</label>
+      <input type="text" class="campoTexto" id="endereco" placeholder="Insira o endereço aqui">
+    </div>
+
+    <div class="divNumero">
+      <label>Insira o número do imóvel</label>
+      <input type="number" class="campoTexto" id="numero" placeholder="Insira o número">
+    </div>
+
+    <div class="divBairro">
+      <label>Insira o bairro</label>
+      <input type="text" class="campoTexto" id="bairro" placeholder="Insira o bairro">
+    </div>
+
+    <div class="divCidade">
+      <label>Insira a cidade</label>
+      <input type="text" class="campoTexto" id="cidade" placeholder="Insira a cidade">
+    </div>
+
+    <div class="divMetragem">
+      <label>Insira a metragem (em m²) do imóvel</label>
+      <input type="number" class="campoTexto" id="metragem" placeholder="Insira a metragem">
+    </div>
+
+    <div class="divQuartos">
+      <label>Insira o número de quartos do imóvel</label>
+      <input type="number" class="campoTexto" id="quartos" placeholder="Insira o número de quartos">
+    </div>
+
+    <div class="divBanheiros">
+      <label>Insira o número de banheiros do imóvel</label>
+      <input type="number" class="campoTexto" id="banheiros" placeholder="Informe a quantidade de banheiros">
+    </div>
+
+    <div class="divComodos">
+      <label>Insira o número de cômodos do imóvel</label>
+      <input type="number" class="campoTexto" id="comodos" placeholder="Informe a quantidade de cômodos">
+    </div>
+
+    <div class="divLocalidade">
+      <label>Escolha a localidade do imóvel</label>
+      <select id="localidade">
+        <option value="Urbano">Urbano</option>
+        <option value="Rural">Rural</option>
+      </select>
+    </div>
+
+    <div class="divAluguel">
+      <label>Insira o aluguel do imóvel</label>
+      <input type="number" class="campoTexto" id="aluguel" placeholder="Insira o valor do aluguel">
+    </div>
+
+    <div class="divCep">
+      <label>Insira o CEP do imóvel</label>
+      <input type="number" class="campoTexto" id="cep" placeholder="Insira o CEP">
+    </div>
+
+    <div class="botao">
+      <button onclick="vender()">Registrar</button>
+    </div>
+  </div>
+
+  <div id="divHistorico">
+    <hr>
+    <h6>Histórico de registro</h6>
+    <ul id="historicoAlteracao"></ul>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
