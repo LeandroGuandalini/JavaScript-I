@@ -1,3 +1,10 @@
+function registrarHistorico(mensagem){
+  const historicoAlteracao = document.getElementById("historicoAlteracao");
+  const li = document.createElement("li");
+  li.textContent = mensagem;
+  historicoAlteracao.appendChild(li);
+}
+
 function validarCamposObrigatorios(produto, quantidade, precoUnitario, dataTransacao){
   return produto && quantidade != null && precoUnitario != null && dataTransacao;
 }
@@ -13,6 +20,10 @@ function validarPrecoUnitario(precoUnitario){
 function registrarDataTransacao(){
   return new Date().toLocaleString();
 } 
+
+function gerarNumeroTransacao () {
+  return Math.floor(Math.random() * 10000000);
+}
   
 function registrarVenda(){
   let produto = "Arroz";
@@ -20,6 +31,7 @@ function registrarVenda(){
   let precoUnitario = 10.5;
   
   let dataTransacao = registrarDataTransacao();
+  let numeroTransacao = gerarNumeroTransacao ();
 
   let validaCamposObrigatorios = validarCamposObrigatorios(produto, quantidade, precoUnitario, dataTransacao);
   let validaQuantidadeProdutos = validarQuantidadeProdutos(quantidade);
@@ -28,16 +40,24 @@ function registrarVenda(){
   if(validaCamposObrigatorios){
     if(validaQuantidadeProdutos){
       if(validaPrecoUnitario){
-        alert("Transação registrada! " + produto + ", Qtde: " + quantidade + ", Preço: R$" + precoUnitario + ", Data: " + dataTransacao);
+        return `[${numeroTransacao}] Transação registrada! ${produto}, Qtde: ${quantidade}, Preço: R$${precoUnitario}, Data: ${dataTransacao}`;
       } else {
-        alert("Problemas na Validação de Preço Unitário!");
+        return "Problemas na Validação de Preço Unitário!";
       }
     } else {
-      alert("Problemas na Validação de Quantidade de Produtos!");
+      return "Problemas na Validação de Quantidade de Produtos!";
     }
   } else {
-      alert("Problemas na validação de campos obrigatórios!");
+      return "Problemas na validação de campos obrigatórios!";
   }
 }
 
-registrarVenda();
+function vender (){
+  let produto = document.getElementById("produto").value;
+  let quantidade = document.getElementById("quantidade").value;
+  let preco = document.getElementById("preco").value;
+
+  let mensagem = registrarVenda(produto, quantidade, preco)
+
+  registrarHistorico(mensagem);
+}
